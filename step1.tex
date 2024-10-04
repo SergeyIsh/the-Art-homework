@@ -1,0 +1,35 @@
+\documentclass[12pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath,amsfonts,amssymb}
+\usepackage{graphicx}
+\usepackage{a4wide}
+\title{Reconstructed abstract of the paper ``Spatio-temporal filling of missing points in geophysical data sets''}
+%\author{not specified, not necessary here}
+\date{}
+\begin{document}
+\maketitle
+
+\begin{abstract}
+Missing points is a common problem for a wide range of geophysical datasets. This is a key difficulty for spatial-temporal variability analysis and many other climate research problems. One of the possible approaches for the missing gaps filling is Singular Spectrum Analysis (SSA), which is a data-adaptive, nonparametric method based on time series embeddings. Our proposed approach involves the iterative estimation of the missing points, followed by a comparison with the previous estimation, until the convergence test is passed. This approach demonstrates good results for synthetic and real datasets for both univariate and multivariate records.
+\end{abstract}
+\paragraph{Keywords:} Missing data, Singular Spectrum Analysis, finite-impulse response filters, climate research
+
+\paragraph{Highlights:}
+\begin{enumerate}
+\item SSA diagonalizes the lag-covariance matrix to obtain spectral information on the time series.
+\item SSA gap filling procedure utilizes temporal (and spatial for multivariate dataset) correlations in the data to fill in the missing points.
+\item The optimum SSA parameters can be chosen using cross-validation
+\item Suggested iterative SSA method can be described in terms of applying iteratively finite-impulse response filters.
+\end{enumerate}
+
+\section{Introduction}
+The main contribution of the paper~\cite{npg-13-151-2006} is the idea of how to use both temporal and spatial correlation to fill the missing gaps in data. The authors suggest using it for the geophysical data sets; however, it might be interesting to apply it for the mobile app users data. Many mobile apps have some limited information about user location (only when geolocation is on or when the app is used), and this method may help to reconstruct more patterns in users data.
+%\begin{figure}
+%\includegraphics[scale=0.35]{SVD_derint}
+%\caption{A rigorous description of what the reader sees on the plot and the consequences of the shown result}
+%\end{figure}
+
+\bibliographystyle{unsrt}
+\bibliography{step1.bib}
+\end{document}
