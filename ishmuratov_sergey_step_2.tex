@@ -1,0 +1,39 @@
+\documentclass[12pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath,amsfonts,amssymb}
+\usepackage{graphicx}
+\usepackage{a4wide}\title{Industrial project description ``Customer demand forecasting for the product on the marketplace''}
+%\author{not specified}
+\date{}
+\begin{document}
+\maketitle
+
+
+I choose the role of \textbf{expert}.
+
+
+
+\section{Planning the industrial research project}
+
+\begin{enumerate}
+\item \textbf{Expected development result:} the model predicts the number of sold products in the next month in some region.
+\item \textbf{How will the result be used:} the result is used to choose the optimal price.
+\item \textbf{Description of historical measured data, formats and timing:} the historical data includes the dates, price, advertisement budget spent in this period, list of competitor's prices at the start of the period, information about the average salary and inflation at the start of the period, and the number of sold products in this period (target value to predict).
+\item \textbf{How is the quality of the obtained result measured, what is in the report:}
+As an expert, I recommend using the simple metrics, which can be easily interpreted in terms of business, for instance MAPE (mean absolute percentage error).
+\item \textbf{Project feasibility.} Given that there was no ML model to predict the demand, the first results with simple approaches can potentially show that the project is feasible and useful. However, if the company drastically changes its price policy, it might lead to significant changes in competitors strategies. Such a kind of interaction might be too sophisticated for the model.
+\item \textbf{Conditions necessary for successful project implementation.} A good dataset should include the data from different seasons and examples of different competitors's price policies, points with different prices for our good.
+
+\item \textbf{Solution methods.}
+For business purposes, the interpretation of results is important, so I recommend using the models with clear interpretation, such as linear models or decision trees.
+\end{enumerate}
+
+\section{Research or development?}
+\textbf{How long will the model be used? What will replace it in the future?} 
+
+The model is good to select an optimal value for a minor price change. The out-of-sample situations might be estimated incorrectly, and I recommend using both model prediction and an expert estimation for a significant price policy change. Another possible risk is a reaction of competitors, which is hard to detect from training data. A fierce competition might lead to something like Cournot competition equilibrium. For such cases, econometric models might be a better approach than classical ML models to find the optimal strategy. In the future, I expect that the models will include information about customers and predict the optimal price at this moment for a single user based on his history and target supply.
+
+%\bibliographystyle{unsrt}
+%\bibliography{Name-theArt}
+\end{document}
