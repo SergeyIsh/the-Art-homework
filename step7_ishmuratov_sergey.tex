@@ -1,0 +1,49 @@
+\documentclass[12pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath,amsfonts,amssymb}
+\usepackage{graphicx}
+\usepackage{a4wide}
+
+\title{Struggling with popularity bias in recommendation systems}
+%\author{not specified, not necessary here}
+\date{}
+\begin{document}
+\maketitle
+The long-tail phenomenon is common in recommendation systems data: in most cases, a small fraction of popular items account for the majority of user interactions. When trained on such data, the model usually gives higher scores to popular items than their ideal values while simply predicting unpopular items as negative. As a result, popular items are recommended even more frequently than their original popularity exhibited in the dataset.
+
+\section{Introduction}
+Table~\ref{tab:intro_comparative} shows a list of solutions on how to struggle with popularity bias in data or how to measure it in existing systems.
+
+\begin{table}[!!htbp]
+\label{tab:intro_comparative}
+\caption{Comparative analysis of basic solutions: how to estimate and solve popularity bias}
+\begin{tabular}{p{5cm}|p{5cm}|p{5cm}}
+Solution & Strengths & Weakness \\
+\hline
+Agent-Based Modeling~\cite{adomavicius2021understanding} & This type of modeling provides a playground for how to simulate user interactions on synthetic data and measure the bias without running AB on real users.
+& A model is limited by the setting rules of interaction; the real-world processes are more sophisticated.
+\\
+\hline
+Multifactorial inversed propensity score (reweightening technique) ~\cite{huang2024going} & The method is straightforward and easy for result interpretation.
+& This method might significantly reduce model quality metrics.
+\\
+\hline
+Regularization/ Causal graph / Adversarial learning
+~\cite{chen2023bias} & This is a long 40-page article with a detailed overview of different types of biases (not only popularity bias) and the ways to struggle with them. For popularity bias, the authors suggest regularization (straightforward and simple), causal graphs (explainable), and adversarial learning (balancing representation).
+& The authors provide only a helicopter view on popularity bias with classical methods. The problem of regularization and adversarial learning is that they hurt model accuracy; the problem of causal graph is that you need assumptions for data generation.
+\\
+\hline
+Crowd-based estimation
+~\cite{lesota2023computational} & The authors get real users feedback for different settings of RS.
+& Expensive and hard to scale. The knowledge that they participate in experiments creates some bias itself.
+\\
+\end{tabular}
+\end{table}
+
+ %The section references contain the full list, collected for this project. 
+\nocite{*} % Remove this to keep the cited referernces only
+\newpage
+\bibliographystyle{unsrt}
+\bibliography{step7}
+\end{document}
